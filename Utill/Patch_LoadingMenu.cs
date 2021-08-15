@@ -1,11 +1,9 @@
 ﻿using HarmonyLib;
-using Sandbox.Game;
 using Sandbox.Game.Gui;
 using System;
 using System.IO;
 using System.Linq;
 using VRage.FileSystem;
-using VRage.Utils;
 
 namespace CustomLoadingScreenBackgrounds.Utill
 {
@@ -13,13 +11,6 @@ namespace CustomLoadingScreenBackgrounds.Utill
     [HarmonyPatch(typeof(MyGuiScreenLoading), "GetRandomBackgroundTexture")]
     public class Patch_LoadingMenu
     {
-
-        public static void Prefix()
-        {
-
-            
-        }
-
         public static string Postfix(string __result)
         {
             string folderpath = Path.Combine(MyFileSystem.UserDataPath, "LoadingScreenBackgroundImages");
@@ -39,7 +30,7 @@ namespace CustomLoadingScreenBackgrounds.Utill
                 try
                 {
                     var di = new DirectoryInfo(path);
-                    var rgFiles = di.GetFiles("*.*").Where(f => extensions.Contains(f.Extension.ToLower()));
+                    var rgFiles = di.GetFiles("*.*");
                     Random R = new Random();
                     file = rgFiles.ElementAt(R.Next(0, rgFiles.Count())).FullName;
                 }
