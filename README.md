@@ -18,7 +18,7 @@ WARNING: Use this only if you could not get the normal plugin installation to wo
 
 If you need you install manually for any reason, here are the steps to install the plugin manually:
 
-1. Click on this link to download the plugin directly: https://github.com/WesternGamer/HideVersionString/releases/download/v1.0.0/HideVersionString.dll
+1. Click on this link to download the plugin directly: https://github.com/WesternGamer/CustomLoadingBackgrounds/releases/download/v1.0.0/CustomLoadingBackgrounds.dll
 
 2. The browser that you are using may say that the plugin is dangerous. Click keep to keep the plugin. It may be hidden so you may need to click the arrow or dots next to the downloaded plugin.
 
