@@ -1,4 +1,7 @@
 # CustomLoadingBackgrounds
+
+TEMP: You must manually install as the normal install does not work currently.
+
 A plugin that allows you to customize the background images on the loading screens.
 
 ![Screenshot (347)](https://user-images.githubusercontent.com/80211714/129464111-b359beb8-8993-400d-8d7b-e9d73e621780.png)
