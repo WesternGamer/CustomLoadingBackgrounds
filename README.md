@@ -13,7 +13,7 @@ To use the plugin, please install PluginLoader (https://github.com/austinvaness/
 
 ## How to add Custom Images
 
-NOTE: Only `.png` files are accepted. Any other files not ending in `.png` will be ignored.
+NOTE: Only `.png` files are accepted. Any other files not ending in `.png` will be ignored. `.PNG` will not work.
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages`.
 2. Paste your images here. File name does not matter; file name must end in `.png`.
