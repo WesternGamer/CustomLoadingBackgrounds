@@ -5,6 +5,9 @@ A plugin that allows you to customize the background images on the loading scree
 ![Screenshot (347)](https://user-images.githubusercontent.com/80211714/129464111-b359beb8-8993-400d-8d7b-e9d73e621780.png)
 An example of a customized loading screen.
 
+## How it works
+
+The plugin selects random `.png` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen.
 
 ## Plugin Installation
 To use the plugin, please install PluginLoader (https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select No News Plugin. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
