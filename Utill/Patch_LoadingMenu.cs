@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using VRage.FileSystem;
 
-namespace CustomLoadingScreenBackgrounds.Utill
+namespace CustomScreenBackgrounds.Utill
 {
 
     [HarmonyPatch(typeof(MyGuiScreenLoading), "GetRandomBackgroundTexture")]

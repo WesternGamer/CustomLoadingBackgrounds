@@ -2,7 +2,7 @@
 using System.Reflection;
 using VRage.Plugins;
 
-namespace CustomLoadingScreenBackgrounds
+namespace CustomScreenBackgrounds
 {
     public class Main : IPlugin
     {   
@@ -13,7 +13,7 @@ namespace CustomLoadingScreenBackgrounds
        
         public void Init(object gameInstance)
         {          
-            Harmony harmony = new Harmony("CustomLoadingScreenBackgrounds");           
+            Harmony harmony = new Harmony("CustomScreenBackgrounds");           
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
       

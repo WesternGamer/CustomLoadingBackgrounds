@@ -7,8 +7,8 @@
     <ProjectGuid>{606AAA7E-6805-424D-97AF-796456829C4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomLoadingScreenBackgrounds</RootNamespace>
-    <AssemblyName>CustomLoadingScreenBackgrounds</AssemblyName>
+    <RootNamespace>CustomScreenBackgrounds</RootNamespace>
+    <AssemblyName>CustomScreenBackgrounds</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
