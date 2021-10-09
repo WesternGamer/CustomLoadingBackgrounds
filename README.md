@@ -1,19 +1,20 @@
 # CustomLoadingBackgrounds
 
-TEMP: You must manually install as the normal install does not work currently.
-
 A plugin that allows you to customize the background images on the loading screens.
 
 ![Screenshot (347)](https://user-images.githubusercontent.com/80211714/129464111-b359beb8-8993-400d-8d7b-e9d73e621780.png)
 An example of a customized loading screen.
 
+## How it works
+
+The plugin selects random `.png` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen.
 
 ## Plugin Installation
-To use the plugin, please install PluginLoader (https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select No News Plugin. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
+To use the plugin, please install PluginLoader (https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select Custom Loading Backgrounds. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
 
 ## How to add Custom Images
 
-NOTE: Only `.png` files are accepted. Any other files not ending in `.png` will be ignored.
+NOTE: Only `.png` files are accepted. Any other files not ending in `.png` will be ignored. `.PNG` will not work.
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages`.
 2. Paste your images here. File name does not matter; file name must end in `.png`.
