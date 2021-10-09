@@ -9,9 +9,9 @@ namespace CustomScreenBackgrounds.Utill
 {
 
     [HarmonyPatch(typeof(MyGuiScreenLoading), "GetRandomBackgroundTexture")]
-    public class Patch_LoadingMenu
+    internal class Patch_LoadingMenu
     {
-        public static string Postfix(string __result)
+        private static string Postfix(string __result)
         {
             string folderpath = Path.Combine(MyFileSystem.UserDataPath, "LoadingScreenBackgroundImages");
             if (!Directory.Exists(folderpath))
@@ -26,7 +26,7 @@ namespace CustomScreenBackgrounds.Utill
             string file = null;
             if (!string.IsNullOrEmpty(path))
             {
-                var extensions = new string[] { ".png" };
+                var extensions = new string[] { ".png", ".dds" };
                 try
                 {
                     var di = new DirectoryInfo(path);
