@@ -13,10 +13,7 @@ namespace CustomScreenBackgrounds.Utill
     {
         private static string Postfix(string __result)
         {
-            string folderpath = Path.Combine(MyFileSystem.UserDataPath, "LoadingScreenBackgroundImages");
-            if (!Directory.Exists(folderpath))
-                Directory.CreateDirectory(folderpath);
-            string file = GetRandomFileFromDir(folderpath);
+            string file = GetRandomFileFromDir(Main.ImageFolderPath);
             __result = file;
             return __result;
         }
