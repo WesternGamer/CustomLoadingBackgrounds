@@ -15,10 +15,12 @@ namespace CustomScreenBackgrounds.Utill
     [HarmonyPatch(typeof(MyGuiScreenMainMenuBase), "Draw")]
     internal class Patch_MainMenuBase
     {
+        private static string folderpath = Path.Combine(Main.ImageFolderPath, "MainMenuScreenBackgroundImages");
+        private static string file = GetRandomFileFromDir(folderpath);
+
         private static void Prefix(float ___m_transitionAlpha)
         {
-            string folderpath = Path.Combine(Main.ImageFolderPath, "MainMenuScreenBackgroundImages");
-
+            
             if (Patch_MainMenu.DrawBackground == true)
             {
                 Color color = new Color(255, 255, 255, 250);
@@ -27,7 +29,7 @@ namespace CustomScreenBackgrounds.Utill
                 MyGuiManager.DrawSpriteBatch("Textures\\GUI\\Blank.dds", fullscreenRectangle, Color.Black, false, true);
                 Rectangle destinationRectangle;
                 MyGuiManager.GetSafeHeightFullScreenPictureSize(MyGuiConstants.LOADING_BACKGROUND_TEXTURE_REAL_SIZE, out destinationRectangle);
-                MyGuiManager.DrawSpriteBatch(GetRandomFileFromDir(folderpath), destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
+                MyGuiManager.DrawSpriteBatch(file, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
             }
         }
 
@@ -36,6 +38,7 @@ namespace CustomScreenBackgrounds.Utill
             string file = null;
             if (!string.IsNullOrEmpty(path))
             {
+                var extensions = new string[] { ".png", ".dds" };
                 try
                 {
                     var di = new DirectoryInfo(path);
