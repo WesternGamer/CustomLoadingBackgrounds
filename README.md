@@ -28,7 +28,7 @@ NOTE: Only `.png` and `.dds` files are accepted. Any other files not ending in `
 2. Paste your images here. File name does not matter; file name must end in `.png` or `.dds`.
 3. You are done!
 
-## How to add Custom Images to Main Menu
+## How to add Custom Videos to Main Menu
 
 NOTE: Only `.wmv` files are accepted. Any other files not ending in `.wmv` will be ignored. `.WMV` will not work.
 
