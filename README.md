@@ -7,17 +7,33 @@ An example of a customized loading screen.
 
 ## How it works
 
-The plugin selects random `.png` or `.dds` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen. For the main menu, the plugin
+The plugin selects random `.png` or `.dds` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen. For the main menu, the plugin cheacks if there are any `.png` or `.dds` images in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages` folder. If there are images, then it will pick a random `.png` or `.dds` image to show in the background of the main menu. Else, it will check if there are `.wmv` video files in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos` folder. If there is video files, it will pick a random video to play in the background of the main menu. If there are no new files in any folder in `LoadingScreenBackgroundImages`, then the main menu background will act like normal.
 
 ## Plugin Installation
 To use the plugin, please install PluginLoader (https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select Custom Loading Backgrounds. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
 
-## How to add Custom Images
+## How to add Custom Images to Loading Menu
 
-NOTE: Only `.png` files are accepted. Any other files not ending in `.png` will be ignored. `.PNG` will not work.
+NOTE: Only `.png` and `.dds` files are accepted. Any other files not ending in `.png` or `.dds` will be ignored. `.PNG` or `.DDS` will not work.
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages`.
-2. Paste your images here. File name does not matter; file name must end in `.png`.
+2. Paste your images here. File name does not matter; file name must end in `.png` or `.dds`.
+3. You are done!
+
+## How to add Custom Images to Main Menu
+
+NOTE: Only `.png` and `.dds` files are accepted. Any other files not ending in `.png` or `.dds` will be ignored. `.PNG` or `.DDS` will not work.
+
+1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages`.
+2. Paste your images here. File name does not matter; file name must end in `.png` or `.dds`.
+3. You are done!
+
+## How to add Custom Images to Main Menu
+
+NOTE: Only `.wmv` files are accepted. Any other files not ending in `.wmv` will be ignored. `.WMV` will not work.
+
+1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos`.
+2. Paste your images here. File name does not matter; file name must end in `.wmv`.
 3. You are done!
 
 ## Manual Plugin Installation With PluginLoader 
