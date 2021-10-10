@@ -1,4 +1,4 @@
-# CustomLoadingBackgrounds
+# CustomScreenBackgrounds
 
 A plugin that allows you to customize the background on the loading screen and main menu.
 
