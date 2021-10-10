@@ -18,6 +18,8 @@ namespace CustomScreenBackgrounds.Utill
         {
             string folderpath = Path.Combine(Main.ImageFolderPath, "MainMenuScreenBackgroundImages");
 
+            string videofolderpath = Path.Combine(Main.ImageFolderPath, "MainMenuScreenBackgroundVideos");
+
             if (!Directory.Exists(folderpath))
             { 
                 Directory.CreateDirectory(folderpath); 
@@ -27,7 +29,7 @@ namespace CustomScreenBackgrounds.Utill
             {
                 if (Directory.GetFiles(folderpath, "*.dds").Length == 0)
                 {
-                    if (Directory.GetFiles(folderpath, "*.wmv").Length == 0)
+                    if (Directory.GetFiles(videofolderpath, "*.wmv").Length == 0)
                     {
                         MyGuiSandbox.AddScreen(___m_backgroundScreen = MyGuiScreenIntroVideo.CreateBackgroundScreen());
                     }
@@ -69,7 +71,7 @@ namespace CustomScreenBackgrounds.Utill
 
         private static string[] GetFileList()
         {
-            return Directory.GetFiles(Main.ImageFolderPath);
+            return Directory.GetFiles(Path.Combine(Main.ImageFolderPath, "MainMenuScreenBackgroundVideos"));
         }
     }
 }
