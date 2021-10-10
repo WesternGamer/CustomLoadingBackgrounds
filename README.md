@@ -1,13 +1,13 @@
 # CustomLoadingBackgrounds
 
-A plugin that allows you to customize the background images on the loading screens.
+A plugin that allows you to customize the background on the loading screen and main menu.
 
 ![Screenshot (347)](https://user-images.githubusercontent.com/80211714/129464111-b359beb8-8993-400d-8d7b-e9d73e621780.png)
 An example of a customized loading screen.
 
 ## How it works
 
-The plugin selects random `.png` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen.
+The plugin selects random `.png` or `.dds` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen. For the main menu, the plugin
 
 ## Plugin Installation
 To use the plugin, please install PluginLoader (https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select Custom Loading Backgrounds. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
