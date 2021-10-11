@@ -1,15 +1,13 @@
-﻿using HarmonyLib;
-using System.IO;
+﻿using CustomScreenBackgrounds.Utill;
+using CustomScreenBackgrounds.Utill.Config;
+using HarmonyLib;
 using System.Reflection;
-using VRage.FileSystem;
 using VRage.Plugins;
 
 namespace CustomScreenBackgrounds
 {
     public class Main : IPlugin
     {
-        public static string ImageFolderPath;
-
         public void Dispose()
         {
             
@@ -17,9 +15,9 @@ namespace CustomScreenBackgrounds
        
         public void Init(object gameInstance)
         {
-            ImageFolderPath = Path.Combine(MyFileSystem.UserDataPath, "LoadingScreenBackgroundImages");
-            if (!Directory.Exists(ImageFolderPath))
-                Directory.CreateDirectory(ImageFolderPath);
+            FileSystem.Init();
+            XMLWriter.Init();
+            XMLReader.Init();
 
             Harmony harmony = new Harmony("CustomScreenBackgrounds");           
             harmony.PatchAll(Assembly.GetExecutingAssembly());
