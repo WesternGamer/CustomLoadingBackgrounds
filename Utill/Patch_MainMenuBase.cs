@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Sandbox.Game.Gui;
 using Sandbox.Game.Screens;
 using Sandbox.Graphics;
 using Sandbox.Graphics.GUI;
@@ -21,7 +22,7 @@ namespace CustomScreenBackgrounds.Utill
         private static void Prefix(float ___m_transitionAlpha)
         {
             
-            if (Patch_MainMenu.DrawBackground == true)
+            if (Patch_MainMenu.DrawBackground == true && MyGuiScreenGamePlay.Static == null)
             {
                 Color color = new Color(255, 255, 255, 250);
                 color.A = (byte)((float)color.A * ___m_transitionAlpha);
