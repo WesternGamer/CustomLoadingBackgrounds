@@ -16,8 +16,6 @@ namespace CustomScreenBackgrounds.Patches
         {
             if (Directory.GetFiles(FileSystem.MainMenuImagesFolderPath, "*.png").Length == 0)
             {
-
-
                 if (Directory.GetFiles(FileSystem.MainMenuImagesFolderPath, "*.dds").Length == 0)
                 {
                     if (Directory.GetFiles(FileSystem.MainMenuVideosFolderPath, "*.wmv").Length == 0)

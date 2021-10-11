@@ -1,4 +1,5 @@
 ﻿using CustomScreenBackgrounds.Utill;
+using CustomScreenBackgrounds.Utill.Config;
 using HarmonyLib;
 using Sandbox.Game.Gui;
 using Sandbox.Game.Screens;
@@ -24,6 +25,14 @@ namespace CustomScreenBackgrounds.Patches
                 Rectangle destinationRectangle;
                 MyGuiManager.GetSafeHeightFullScreenPictureSize(MyGuiConstants.LOADING_BACKGROUND_TEXTURE_REAL_SIZE, out destinationRectangle);
                 MyGuiManager.DrawSpriteBatch(Image, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
+                if (XMLReader.MainMenuOverlay)
+                {
+                    MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\screen_background_fade.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
+                }
+                if (XMLReader.MainMenuOverlay2)
+                {
+                    MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\main_menu_overlay.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
+                }
             }
         }
     }
