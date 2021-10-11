@@ -1,4 +1,4 @@
-# CustomScreenBackgrounds
+# Custom Screen Backgrounds
 
 A plugin that allows you to customize the background on the loading screen and main menu.
 
@@ -40,6 +40,20 @@ NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBac
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos`.
 2. Paste your images here. File name does not matter; file name must end in `.wmv`.
 3. You are done!
+
+## NEW: How to Enable Overlays
+
+With the release of v1.2.0 of Custom Screen Backgrounds, there is now a option to enable or disable overlays in the main menu or loading menu. Instructions on how to do so are listed below:
+
+1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\Config`
+2. Open `config.xml` with notepad or your preferred text editor.
+![Screenshot (1742)](https://user-images.githubusercontent.com/80211714/136844661-68dd3c9f-701d-4db0-a052-6be29c49a62f.png)
+3. You should see three config entries: `MainMenuOverlay`, `MainMenuOverlay2`, and `LoadingScreenOverlay`. The value of all of them are false by default. Modify these config entries to your peferences. NOTE: Only `true` or `false` values are accepted. `TRUE` or `FALSE` values will not work and may crash the game.
+
+Config entries:
+-`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
+-`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
+-`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
 
 ## Manual Plugin Installation With PluginLoader 
 
