@@ -6,7 +6,7 @@ A plugin that allows you to customize the background on the loading screen and m
 An example of a customized loading screen.
 
 ![Screenshot (1730)](https://user-images.githubusercontent.com/80211714/136678865-5035412d-26ae-4403-a0f2-b9f4989acbe7.png)
-An example of a customized main menu.
+An example of a customized main menu. (Yes that is my Red Dead Online character.)
 
 ## How it works
 
