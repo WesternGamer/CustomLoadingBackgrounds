@@ -11,8 +11,9 @@ namespace CustomScreenBackgrounds.Patches
     internal class Patch_MainMenu
     {
         public static bool DrawBackground = false;
+        public static MyGuiScreenIntroVideo Video = null;
 
-        private static bool Prefix(MyGuiScreenIntroVideo ___m_backgroundScreen)
+        private static bool Prefix()
         {
             if (Directory.GetFiles(FileSystem.MainMenuImagesFolderPath, "*.png").Length == 0)
             {
@@ -20,11 +21,11 @@ namespace CustomScreenBackgrounds.Patches
                 {
                     if (Directory.GetFiles(FileSystem.MainMenuVideosFolderPath, "*.wmv").Length == 0)
                     {
-                        MyGuiSandbox.AddScreen(___m_backgroundScreen = MyGuiScreenIntroVideo.CreateBackgroundScreen());
+                        MyGuiSandbox.AddScreen(Video = MyGuiScreenIntroVideo.CreateBackgroundScreen());
                     }
                     else
                     {
-                        MyGuiSandbox.AddScreen(___m_backgroundScreen = new MyGuiScreenIntroVideo(Directory.GetFiles(FileSystem.MainMenuVideosFolderPath), true, true, false, 0f, false, 1500, 0U));
+                        MyGuiSandbox.AddScreen(Video = new MyGuiScreenIntroVideo(Directory.GetFiles(FileSystem.MainMenuVideosFolderPath), true, true, false, 0f, false, 1500, 0U));
                     }
                 }
                 else
@@ -36,7 +37,23 @@ namespace CustomScreenBackgrounds.Patches
             {
                 DrawBackground = true;
             }
+            
+
             return false;
         }  
+    }
+
+    //Patch to fix issue #2 https://github.com/WesternGamer/CustomLoadingBackgrounds/issues/2
+    [HarmonyPatch(typeof(MyGuiScreenMainMenu), "CloseScreenNow")]
+    internal class Patch_MainMenuVideoPatch
+    {
+        private static void Prefix()
+        {
+            if (Patch_MainMenu.Video != null)
+            {
+                Patch_MainMenu.Video.CloseScreenNow(false);
+            }
+            Patch_MainMenu.Video = null;
+        }
     }
 }
