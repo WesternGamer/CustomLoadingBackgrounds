@@ -25,6 +25,7 @@ namespace CustomScreenBackgrounds.Utill.Config
                     writer.WriteElementString("MainMenuOverlay", "false");
                     writer.WriteElementString("MainMenuOverlay2", "false");
                     writer.WriteElementString("LoadingScreenOverlay", "false");
+                    writer.WriteElementString("CleanLoadingMenu", "true");
                     writer.WriteEndElement();
                     writer.Flush();
                 }
