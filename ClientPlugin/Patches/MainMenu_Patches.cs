@@ -12,6 +12,7 @@ namespace CustomScreenBackgrounds.Patches
     {
         public static bool DrawBackground = false;
         public static MyGuiScreenIntroVideo Video = null;
+        public static string Image;
 
         private static bool Prefix()
         {
@@ -30,11 +31,13 @@ namespace CustomScreenBackgrounds.Patches
                 }
                 else
                 {
+                    Image = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
                     DrawBackground = true;
                 }
             }
             else
             {
+                Image = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
                 DrawBackground = true;
             }
 

@@ -17,19 +17,27 @@ namespace CustomScreenBackgrounds.Utill
         {
             RootFolderPath = Path.Combine(MyFileSystem.UserDataPath, "LoadingScreenBackgroundImages");
             if (!Directory.Exists(RootFolderPath))
+            {
                 Directory.CreateDirectory(RootFolderPath);
+            }
 
             MainMenuImagesFolderPath = Path.Combine(RootFolderPath, "MainMenuScreenBackgroundImages");
             if (!Directory.Exists(MainMenuImagesFolderPath))
+            {
                 Directory.CreateDirectory(MainMenuImagesFolderPath);
+            }
 
             MainMenuVideosFolderPath = Path.Combine(RootFolderPath, "MainMenuScreenBackgroundVideos");
             if (!Directory.Exists(MainMenuVideosFolderPath))
+            {
                 Directory.CreateDirectory(MainMenuVideosFolderPath);
+            }
 
             ConfigFolderPath = Path.Combine(RootFolderPath, "Config");
             if (!Directory.Exists(ConfigFolderPath))
+            {
                 Directory.CreateDirectory(ConfigFolderPath);
+            }
         }
 
         public static string GetRandomFileFromDir(string path)
@@ -39,8 +47,8 @@ namespace CustomScreenBackgrounds.Utill
             {
                 try
                 {
-                    var di = new DirectoryInfo(path);
-                    var rgFiles = di.GetFiles("*.*");
+                    DirectoryInfo di = new DirectoryInfo(path);
+                    FileInfo[] rgFiles = di.GetFiles("*.*");
                     RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
                     byte[] data = new byte[4];
                     rng.GetBytes(data);
@@ -48,8 +56,8 @@ namespace CustomScreenBackgrounds.Utill
                     Random R = new Random(value);
                     file = rgFiles.ElementAt(R.Next(0, rgFiles.Count())).FullName;
                 }
-                catch 
-                { 
+                catch
+                {
                 }
             }
             return file;

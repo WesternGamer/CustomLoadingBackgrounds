@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Xml;
 
 namespace CustomScreenBackgrounds.Utill.Config
@@ -14,11 +9,13 @@ namespace CustomScreenBackgrounds.Utill.Config
         {
             if (Directory.GetFiles(FileSystem.ConfigFolderPath, "config.xml").Length == 0)
             {
-                XmlWriterSettings settings = new XmlWriterSettings();
-                settings.Indent = true;
-                settings.IndentChars = ("    ");
-                settings.CloseOutput = true;
-                settings.OmitXmlDeclaration = true;
+                XmlWriterSettings settings = new XmlWriterSettings
+                {
+                    Indent = true,
+                    IndentChars = ("    "),
+                    CloseOutput = true,
+                    OmitXmlDeclaration = true
+                };
                 using (XmlWriter writer = XmlWriter.Create(FileSystem.ConfigFolderPath + "\\config.xml", settings))
                 {
                     writer.WriteStartElement("Overlays");

@@ -1,8 +1,8 @@
-﻿using System.Reflection;
-using CustomScreenBackgrounds.Utill;
+﻿using CustomScreenBackgrounds.Utill;
 using CustomScreenBackgrounds.Utill.Config;
 using HarmonyLib;
 using NLog;
+using System.Reflection;
 using VRage.Plugins;
 
 namespace CustomScreenBackgrounds
@@ -27,13 +27,15 @@ namespace CustomScreenBackgrounds
 
         public void Dispose()
         {
-            
+
         }
 
         public void Update()
         {
             if (initialized)
+            {
                 return;
+            }
 
             Initialize();
 

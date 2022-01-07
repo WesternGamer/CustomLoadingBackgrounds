@@ -31,6 +31,7 @@ namespace CustomScreenBackgrounds.Utill.Config
                                 break;
                             case "CleanLoadingMenu":
                                 CleanLoadingMenu = ConvertStringToBool(reader.ReadString());
+                                break;
                         }
                     }
                 }

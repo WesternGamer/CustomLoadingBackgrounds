@@ -3,7 +3,7 @@ if [%2] == [] goto EOF
 
 echo Parameters: %*
 
-set TARGET=..\..\..\Bin64\Plugins\Local
+set TARGET=..\..\..\..\Bin64\Plugins\Local
 mkdir %TARGET% >NUL 2>&1
 
 set NAME=%~2

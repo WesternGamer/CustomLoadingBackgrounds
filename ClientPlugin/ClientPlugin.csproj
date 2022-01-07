@@ -7,8 +7,8 @@
     <ProjectGuid>{E507FDD0-C983-44A3-BBEE-82856AC4AAE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClientPlugin</RootNamespace>
-    <AssemblyName>ClientPlugin</AssemblyName>
+    <RootNamespace>CustomScreenBackgrounds</RootNamespace>
+    <AssemblyName>CustomScreenBackgrounds</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <LangVersion>latest</LangVersion>
