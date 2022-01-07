@@ -41,7 +41,7 @@ NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBac
 2. Paste your images here. File name does not matter; file name must end in `.wmv`.
 3. You are done!
 
-## NEW: How to Enable Overlays
+## How to Enable Overlays
 
 With the release of v1.2.0 of Custom Screen Backgrounds, there is now a option to enable or disable overlays in the main menu or loading menu. Instructions on how to do so are listed below:
 
@@ -54,38 +54,5 @@ Config entries:
 -`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
 -`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
 -`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
-
-## Manual Plugin Installation With PluginLoader 
-
-WARNING: Use this only if you could not get the normal plugin installation to work in anyway. Local plugins can be dangerous because these plugins are not checked by the authors of PluginLoader and you may accidentally run a virus or malware. USE AT YOUR OWN RISK.
-
-If you need you install manually for any reason, here are the steps to install the plugin manually:
-
-1. Click on this link to download the plugin directly: https://github.com/WesternGamer/CustomLoadingBackgrounds/releases/download/v1.2.0/CustomScreenBackgrounds.dll
-
-2. The browser that you are using may say that the plugin is dangerous. Click keep to keep the plugin. It may be hidden so you may need to click the arrow or dots next to the downloaded plugin.
-
-3. Go to your downloads folder and find the plugin file called `CustomScreenBackgrounds.dll`.
-
-4. Right click and the file and click cut.
-
-5. Now open Steam and go to your Steam library.
-
-6. Right click Space Engineers in the list to the left.
-
-7. Click properties.
-
-9. Go to Local Files and click Browse.
-
-10. Click on the Bin64 folder and then the Plugins folder.
-
-11. Right click in the empty space in the folder and click paste.
-
-12. Right click on the file you just pasted and click properties.
-
-13. At the bottom, click unblock then Apply. You can now close the window.
-
-15. Start Space Engineers and go to the plugins menu from the main menu and select `CustomScreenBackgrounds.dll`. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done!
-
 
 
