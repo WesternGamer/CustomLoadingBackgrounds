@@ -14,8 +14,6 @@ namespace CustomScreenBackgrounds.Patches
     [HarmonyPatch(typeof(MyGuiScreenLoading), "DrawInternal")]
     internal class Patch_LoadingMenu
 	{
-		private static string RandomImage = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
-
 		private static bool Prefix(
 			float ___m_transitionAlpha, 
 			string ___m_customTextFromConstructor, 
@@ -28,13 +26,13 @@ namespace CustomScreenBackgrounds.Patches
 			MyGuiManager.DrawSpriteBatch("Textures\\GUI\\Blank.dds", fullscreenRectangle, Color.Black, false, true);
 			Rectangle destinationRectangle;
 			MyGuiManager.GetSafeHeightFullScreenPictureSize(MyGuiConstants.LOADING_BACKGROUND_TEXTURE_REAL_SIZE, out destinationRectangle);
-			MyGuiManager.DrawSpriteBatch(RandomImage, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
+			MyGuiManager.DrawSpriteBatch(FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath), destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
 			if (XMLReader.LoadingScreenOverlay)
 			{
 				MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\screen_background_fade.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
 			}
 			MyGuiSandbox.DrawGameLogoHandler(___m_transitionAlpha, MyGuiManager.ComputeFullscreenGuiCoordinate(MyGuiDrawAlignEnum.HORISONTAL_LEFT_AND_VERTICAL_TOP, 44, 68));
-			MyGuiScreenLoading.LastBackgroundTexture = RandomImage;
+			MyGuiScreenLoading.LastBackgroundTexture = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
 			MyGuiManager.DrawString("LoadingScreen", MyTexts.GetString(MyCommonTexts.LoadingPleaseWaitUppercase), MyGuiConstants.LOADING_PLEASE_WAIT_POSITION, MyGuiSandbox.GetDefaultTextScaleWithLanguage() * 1.1f, new Color?(new Color(MyGuiConstants.LOADING_PLEASE_WAIT_COLOR * ___m_transitionAlpha)), MyGuiDrawAlignEnum.HORISONTAL_CENTER_AND_VERTICAL_BOTTOM, false, float.PositiveInfinity, false);
 			if (string.IsNullOrEmpty(___m_customTextFromConstructor))
 			{

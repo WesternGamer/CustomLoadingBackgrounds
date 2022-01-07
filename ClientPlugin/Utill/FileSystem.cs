@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using VRage.FileSystem;
 
 namespace CustomScreenBackgrounds.Utill
@@ -40,7 +41,11 @@ namespace CustomScreenBackgrounds.Utill
                 {
                     var di = new DirectoryInfo(path);
                     var rgFiles = di.GetFiles("*.*");
-                    Random R = new Random();
+                    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+                    byte[] data = new byte[4];
+                    rng.GetBytes(data);
+                    int value = BitConverter.ToInt32(data, 0);
+                    Random R = new Random(value);
                     file = rgFiles.ElementAt(R.Next(0, rgFiles.Count())).FullName;
                 }
                 catch 

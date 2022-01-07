@@ -25,6 +25,7 @@ namespace CustomScreenBackgrounds.Utill.Config
                     writer.WriteElementString("MainMenuOverlay", "false");
                     writer.WriteElementString("MainMenuOverlay2", "false");
                     writer.WriteElementString("LoadingScreenOverlay", "false");
+                    writer.WriteElementString("MainMenuDlcIcons", "false");
                     writer.WriteEndElement();
                     writer.Flush();
                 }

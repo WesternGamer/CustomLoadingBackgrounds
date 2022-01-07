@@ -7,6 +7,7 @@ namespace CustomScreenBackgrounds.Utill.Config
         public static bool MainMenuOverlay;
         public static bool MainMenuOverlay2;
         public static bool LoadingScreenOverlay;
+        public static bool MainMenuDlcIcons;
 
         public static void Init()
         {
@@ -28,6 +29,10 @@ namespace CustomScreenBackgrounds.Utill.Config
                             case "LoadingScreenOverlay":
                                 LoadingScreenOverlay = ConvertStringToBool(reader.ReadString());
                                 break;
+                            case "MainMenuDlcIcons":
+                                MainMenuDlcIcons = ConvertStringToBool(reader.ReadString());
+                                break;
+
 
                         }
                     }

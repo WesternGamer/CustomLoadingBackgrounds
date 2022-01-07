@@ -37,10 +37,10 @@ namespace CustomScreenBackgrounds.Patches
             {
                 DrawBackground = true;
             }
-            
+
 
             return false;
-        }  
+        }
     }
 
     //Patch to fix issue #2 https://github.com/WesternGamer/CustomLoadingBackgrounds/issues/2
@@ -56,4 +56,35 @@ namespace CustomScreenBackgrounds.Patches
             Patch_MainMenu.Video = null;
         }
     }
+
+    /*
+    [HarmonyPatch(typeof(MyGuiScreenMainMenu), MethodType.Constructor)]
+    [HarmonyPatch("MyGuiScreenMainMenu")]
+    internal class Patch_MainMenuVideoInit
+    {
+        private static void Postfix(MyGuiScreenMainMenu __instance, MyBadgeHelper ___m_myBadgeHelper)
+        {
+
+
+        }
+    }*/
+
+    [HarmonyPatch(typeof(MyBadgeHelper), "DrawGameLogo")]
+    internal class Patch2
+    {
+        private static bool Prefix()
+        {
+            return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(MyBadgeHelper), "RefreshGameLogo")]
+    internal class Patch3
+    {
+        private static bool Prefix()
+        {
+            return false;
+        }
+    }
 }
+
