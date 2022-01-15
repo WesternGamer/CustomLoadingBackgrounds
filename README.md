@@ -8,6 +8,9 @@ An example of a customized loading screen.
 ![Screenshot (1730)](https://user-images.githubusercontent.com/80211714/136678865-5035412d-26ae-4403-a0f2-b9f4989acbe7.png)
 An example of a customized main menu. (Yes that is my Red Dead Online character.)
 
+![Screenshot (2279)](https://user-images.githubusercontent.com/80211714/149607236-ee604295-f5ae-4c26-a134-5877444d9458.png)
+An example of the clean loading menu feature.
+
 ## How it works
 
 The plugin selects random `.png` or `.dds` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen. For the main menu, the plugin cheacks if there are any `.png` or `.dds` images in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages` folder. If there are images, then it will pick a random `.png` or `.dds` image to show in the background of the main menu. Else, it will check if there are `.wmv` video files in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos` folder. If there is video files, it will pick a random video to play in the background of the main menu. If there are no new files in any folder in `LoadingScreenBackgroundImages`, then the main menu background will act like normal.
@@ -47,12 +50,14 @@ With the release of v1.2.0 of Custom Screen Backgrounds, there is now a option t
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\Config`
 2. Open `config.xml` with notepad or your preferred text editor.
-![Screenshot (1742)](https://user-images.githubusercontent.com/80211714/136844661-68dd3c9f-701d-4db0-a052-6be29c49a62f.png)
-3. You should see three config entries: `MainMenuOverlay`, `MainMenuOverlay2`, and `LoadingScreenOverlay`. The value of all of them are false by default. Modify these config entries to your peferences. NOTE: Only `true` or `false` values are accepted. `TRUE` or `FALSE` values will not work and may crash the game.
+![Screenshot (2315)](https://user-images.githubusercontent.com/80211714/149607321-9bb5b2f2-0eb7-4607-bc17-0eb15f98d306.png)
+3. You should see multiple config entries. 
+//TODO: Finish Docs
 
 Config entries:
 -`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
 -`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
 -`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
+
 
 
