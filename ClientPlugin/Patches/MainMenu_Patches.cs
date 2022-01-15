@@ -12,7 +12,7 @@ namespace CustomScreenBackgrounds.Patches
     {
         public static bool DrawBackground = false;
         public static MyGuiScreenIntroVideo Video = null;
-        public static string Image;
+        public static BackgroundScreen Image;
 
         private static bool Prefix()
         {
@@ -22,7 +22,7 @@ namespace CustomScreenBackgrounds.Patches
                 {
                     if (Directory.GetFiles(FileSystem.MainMenuVideosFolderPath, "*.wmv").Length == 0)
                     {
-                        MyGuiSandbox.AddScreen(Video = MyGuiScreenIntroVideo.CreateBackgroundScreen());
+                        return true;
                     }
                     else
                     {
@@ -31,17 +31,13 @@ namespace CustomScreenBackgrounds.Patches
                 }
                 else
                 {
-                    Image = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
-                    DrawBackground = true;
+                    MyGuiSandbox.AddScreen(Image = new BackgroundScreen(FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath)));
                 }
             }
             else
             {
-                Image = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
-                DrawBackground = true;
+                MyGuiSandbox.AddScreen(Image = new BackgroundScreen(FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath)));
             }
-
-
             return false;
         }
     }
@@ -57,6 +53,12 @@ namespace CustomScreenBackgrounds.Patches
                 Patch_MainMenu.Video.CloseScreenNow(false);
             }
             Patch_MainMenu.Video = null;
+
+            if (Patch_MainMenu.Image != null)
+            {
+                Patch_MainMenu.Image.CloseScreenNow(false);
+            }
+            Patch_MainMenu.Image = null;
         }
     }
 
@@ -71,23 +73,5 @@ namespace CustomScreenBackgrounds.Patches
 
         }
     }*/
-
-    [HarmonyPatch(typeof(MyBadgeHelper), "DrawGameLogo")]
-    internal class Patch2
-    {
-        private static bool Prefix()
-        {
-            return false;
-        }
-    }
-
-    [HarmonyPatch(typeof(MyBadgeHelper), "RefreshGameLogo")]
-    internal class Patch3
-    {
-        private static bool Prefix()
-        {
-            return false;
-        }
-    }
 }
 

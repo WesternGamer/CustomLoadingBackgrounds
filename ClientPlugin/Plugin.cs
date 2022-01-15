@@ -1,9 +1,10 @@
 ﻿using CustomScreenBackgrounds.Utill;
 using CustomScreenBackgrounds.Utill.Config;
 using HarmonyLib;
-using NLog;
+using System;
 using System.Reflection;
 using VRage.Plugins;
+using VRage.Utils;
 
 namespace CustomScreenBackgrounds
 {
@@ -11,7 +12,7 @@ namespace CustomScreenBackgrounds
     {
         public const string Name = "CustomScreenBackgrounds";
 
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        private static readonly PluginLogger Log = new PluginLogger(Name);
 
         private static bool initialized;
 
@@ -20,14 +21,28 @@ namespace CustomScreenBackgrounds
         [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
         public void Init(object gameInstance)
         {
-            Log.Debug($"{Name}: Patching");
-            Harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Log.Info($"{Name}: Patches applied");
+            Log.WriteLine(MyLogSeverity.Debug, "Patching");
+            try
+            {
+                Harmony.PatchAll(Assembly.GetExecutingAssembly());
+            }
+            catch (Exception ex)
+            {
+                Log.WriteException(MyLogSeverity.Critical, ex);
+            }
+            Log.WriteLine(MyLogSeverity.Info, "Patches applied");
         }
 
         public void Dispose()
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                Log.WriteException(MyLogSeverity.Critical, ex);
+            }
         }
 
         public void Update()
@@ -40,17 +55,33 @@ namespace CustomScreenBackgrounds
             Initialize();
 
             initialized = true;
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Log.WriteException(MyLogSeverity.Critical, ex);
+            }
         }
 
         private void Initialize()
         {
-            Log.Debug($"{Name}: Initializing");
+            Log.WriteLine(MyLogSeverity.Info, "Initializing");
 
-            FileSystem.Init();
-            XMLWriter.Init();
-            XMLReader.Init();
+            try
+            {
+                FileSystem.Init();
+                XMLWriter.CreateNewConfigIfNeeded();
+                new XMLReader(FileSystem.ConfigFolderPath + "\\config.xml");
+            }
+            catch (Exception ex)
+            {
+                Log.WriteException(MyLogSeverity.Critical, ex);
+            }
 
-            Log.Info($"{Name}: Initialized");
+            Log.WriteLine(MyLogSeverity.Info, "Initialized");
         }
     }
 }

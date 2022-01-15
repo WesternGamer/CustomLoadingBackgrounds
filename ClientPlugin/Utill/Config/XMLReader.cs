@@ -1,4 +1,6 @@
-﻿using System.Xml;
+﻿using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace CustomScreenBackgrounds.Utill.Config
 {
@@ -8,47 +10,74 @@ namespace CustomScreenBackgrounds.Utill.Config
         public static bool MainMenuOverlay2;
         public static bool LoadingScreenOverlay;
         public static bool CleanLoadingMenu;
+        private readonly string XmlLocation;
 
-        public static void Init()
+        public XMLReader(string xmlLocation)
         {
-            using (XmlReader reader = XmlReader.Create(FileSystem.ConfigFolderPath + "\\config.xml"))
-            {
-                while (reader.Read())
-                {
-                    if (reader.IsStartElement())
-                    {
-                        //return only when you have START tag  
-                        switch (reader.Name.ToString())
-                        {
-                            case "MainMenuOverlay":
-                                MainMenuOverlay = ConvertStringToBool(reader.ReadString());
-                                break;
-                            case "MainMenuOverlay2":
-                                MainMenuOverlay2 = ConvertStringToBool(reader.ReadString());
-                                break;
-                            case "LoadingScreenOverlay":
-                                LoadingScreenOverlay = ConvertStringToBool(reader.ReadString());
-                                break;
-                            case "CleanLoadingMenu":
-                                CleanLoadingMenu = ConvertStringToBool(reader.ReadString());
-                                break;
-                        }
-                    }
-                }
-            }
+            XmlLocation = xmlLocation;
+            VerifyVersion();
+            LoadData();
         }
 
-        private static bool ConvertStringToBool(string str)
+        private bool ConvertStringToBool(string str)
         {
-            if (str == "true")
+            if (str.ToLower() == "true")
             {
                 return true;
             }
-            if (str == "false")
+
+            if (str.ToLower() == "false")
             {
                 return false;
             }
+
             return false;
+        }
+
+        private void LoadData()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(XmlLocation);
+
+            XmlNode MainMenuOverlayNode = doc.SelectSingleNode("//Config//OverlaySettings//MainMenuOverlay");
+            MainMenuOverlay = ConvertStringToBool(MainMenuOverlayNode.InnerText);
+
+            XmlNode MainMenuOverlay2Node = doc.SelectSingleNode("//Config//OverlaySettings//MainMenuOverlay2");
+            MainMenuOverlay2 = ConvertStringToBool(MainMenuOverlay2Node.InnerText);
+
+            XmlNode LoadingScreenOverlayNode = doc.SelectSingleNode("//Config//OverlaySettings//LoadingScreenOverlay");
+            LoadingScreenOverlay = ConvertStringToBool(LoadingScreenOverlayNode.InnerText);
+
+            XmlNode CleanLoadingMenuNode = doc.SelectSingleNode("//Config//CleanLoadingMenu");
+            CleanLoadingMenu = ConvertStringToBool(CleanLoadingMenuNode.InnerText);
+        }
+
+        private void VerifyVersion()
+        {
+            string xmlFile = XmlLocation;
+
+            XDocument xml = XDocument.Load(xmlFile);
+
+            if (!xml.Descendants().Elements("Version").Any())
+            {
+                ReadV1_2Data();
+                XMLWriter.UpdateTo1_3();
+            }
+        }
+
+        private void ReadV1_2Data()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(XmlLocation);
+
+            XmlNode MainMenuOverlayNode = doc.SelectSingleNode("//Overlays//MainMenuOverlay");
+            MainMenuOverlay = ConvertStringToBool(MainMenuOverlayNode.InnerText);
+
+            XmlNode MainMenuOverlay2Node = doc.SelectSingleNode("//Overlays//MainMenuOverlay2");
+            MainMenuOverlay2 = ConvertStringToBool(MainMenuOverlay2Node.InnerText);
+
+            XmlNode LoadingScreenOverlayNode = doc.SelectSingleNode("//Overlays//LoadingScreenOverlay");
+            LoadingScreenOverlay = ConvertStringToBool(LoadingScreenOverlayNode.InnerText);
         }
     }
 }
