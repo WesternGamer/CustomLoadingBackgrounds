@@ -44,15 +44,14 @@ NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBac
 2. Paste your images here. File name does not matter; file name must end in `.wmv`.
 3. You are done!
 
-## How to Enable Overlays
+## Configuration
 
-With the release of v1.2.0 of Custom Screen Backgrounds, there is now a option to enable or disable overlays in the main menu or loading menu. Instructions on how to do so are listed below:
+There are configuration options for this plugin. Instructions on how to modify the configuration are listed below:
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\Config`
 2. Open `config.xml` with notepad or your preferred text editor.
 ![Screenshot (2315)](https://user-images.githubusercontent.com/80211714/149607321-9bb5b2f2-0eb7-4607-bc17-0eb15f98d306.png)
 3. You should see multiple config entries. 
-//TODO: Finish Docs
 
 Config entries:
 
@@ -62,4 +61,4 @@ Config entries:
 
 -`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
 
--`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
+-NEW - v1.3.0:`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
