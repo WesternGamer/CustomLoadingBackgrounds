@@ -61,4 +61,4 @@ Config entries:
 
 -`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
 
--NEW - v1.3.0:`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
+-NEW - v1.3.0 :`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
