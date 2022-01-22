@@ -55,11 +55,11 @@ With the release of v1.2.0 of Custom Screen Backgrounds, there is now a option t
 //TODO: Finish Docs
 
 Config entries:
+
 -`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
 
 -`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
 
 -`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
 
-
-
+-`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
