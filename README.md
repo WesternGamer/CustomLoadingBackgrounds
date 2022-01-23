@@ -41,7 +41,7 @@ NOTE: Only `.wmv` files are accepted. Any other files not ending in `.wmv` will 
 NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages` or custom videos will not work.
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos`.
-2. Paste your images here. File name does not matter; file name must end in `.wmv`.
+2. Paste your images here. File name does not matter; file name must end in `.wmv`. Image resolution does not matter, any images that is not 16:9 aspect ratio will be streched/squashed.
 3. You are done!
 
 ## Configuration
