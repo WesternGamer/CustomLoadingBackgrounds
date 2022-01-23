@@ -57,6 +57,8 @@ There are configuration options for this plugin. Instructions on how to modify t
 
 Config entries:
 
+-`Version`: Not to be used by user. Used to update xml file if xml layout is changed in future update.
+
 -`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
 
 -`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
