@@ -50,6 +50,7 @@ There are configuration options for this plugin. Instructions on how to modify t
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\Config`
 2. Open `config.xml` with notepad or your preferred text editor.
+
 ![Screenshot (2315)](https://user-images.githubusercontent.com/80211714/149607321-9bb5b2f2-0eb7-4607-bc17-0eb15f98d306.png)
 3. You should see multiple config entries. 
 
