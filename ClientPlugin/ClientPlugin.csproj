@@ -547,14 +547,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackgroundScreen.cs" />
+    <Compile Include="GUI\MyPluginConfigDialog.cs" />
     <Compile Include="Patches\MainMenu_Patches.cs" />
     <Compile Include="Patches\Patch_LoadingMenu.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utill\Config\XMLReader.cs" />
-    <Compile Include="Utill\Config\XMLWriter.cs" />
     <Compile Include="Utill\FileSystem.cs" />
-    <Compile Include="Utill\PluginLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="deploy.bat" />

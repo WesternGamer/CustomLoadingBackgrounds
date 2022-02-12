@@ -1,5 +1,4 @@
 ﻿using CustomScreenBackgrounds.Utill;
-using CustomScreenBackgrounds.Utill.Config;
 using HarmonyLib;
 using Sandbox.Game.Gui;
 using Sandbox.Graphics;
@@ -25,12 +24,12 @@ namespace CustomScreenBackgrounds.Patches
 
             MyGuiManager.DrawSpriteBatch(___m_backgroundScreenTexture, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
 
-            if (XMLReader.LoadingScreenOverlay)
+            if (Plugin.Instance.Config.LoadingScreenOverlay)
             {
                 MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\screen_background_fade.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
             }
 
-            if (XMLReader.CleanLoadingMenu)
+            if (Plugin.Instance.Config.CleanLoadingMenu)
             {
                 ___m_wheel.Visible = false;
             }
@@ -83,7 +82,7 @@ namespace CustomScreenBackgrounds.Patches
     {
         private static void Postfix(MyGuiScreenLoading __instance)
         {
-            if (XMLReader.CleanLoadingMenu)
+            if (Plugin.Instance.Config.CleanLoadingMenu)
             {
                 MyGuiControlRotatingWheel rotatingWheel = new MyGuiControlRotatingWheel(new Vector2(1.13f, 0.95f), MyGuiConstants.ROTATING_WHEEL_COLOR, 0.26f, MyGuiDrawAlignEnum.HORISONTAL_RIGHT_AND_VERTICAL_BOTTOM, manualRotationUpdate: false);
                 __instance.Controls.Add(rotatingWheel);

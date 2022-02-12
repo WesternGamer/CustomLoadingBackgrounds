@@ -1,5 +1,4 @@
-﻿using CustomScreenBackgrounds.Utill.Config;
-using Sandbox.Game.Gui;
+﻿using Sandbox.Game.Gui;
 using Sandbox.Graphics;
 using Sandbox.Graphics.GUI;
 using VRageMath;
@@ -39,11 +38,11 @@ namespace CustomScreenBackgrounds
 
             MyGuiManager.GetSafeHeightFullScreenPictureSize(MyGuiConstants.LOADING_BACKGROUND_TEXTURE_REAL_SIZE, out Rectangle destinationRectangle);
             MyGuiManager.DrawSpriteBatch(Image, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
-            if (XMLReader.MainMenuOverlay)
+            if (Plugin.Instance.Config.MainMenuOverlay)
             {
                 MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\screen_background_fade.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
             }
-            if (XMLReader.MainMenuOverlay2)
+            if (Plugin.Instance.Config.MainMenuOverlay2)
             {
                 MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\main_menu_overlay.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
             }
