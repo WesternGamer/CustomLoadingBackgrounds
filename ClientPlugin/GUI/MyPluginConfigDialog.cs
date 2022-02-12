@@ -12,7 +12,7 @@ namespace ClientPlugin.GUI
 
     public class MyPluginConfigDialog : MyGuiScreenBase
     {
-        private const string Caption = "PluginTemplate Configuration";
+        private const string Caption = "Custom Screen Backgrounds Config";
         public override string GetFriendlyName() => "MyPluginConfigDialog";
 
         private MyLayoutTable layoutTable;
