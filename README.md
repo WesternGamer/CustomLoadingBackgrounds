@@ -8,12 +8,15 @@ An example of a customized loading screen.
 ![Screenshot (1730)](https://user-images.githubusercontent.com/80211714/136678865-5035412d-26ae-4403-a0f2-b9f4989acbe7.png)
 An example of a customized main menu. (Yes that is my Red Dead Online character.)
 
+![Screenshot (2279)](https://user-images.githubusercontent.com/80211714/149607236-ee604295-f5ae-4c26-a134-5877444d9458.png)
+An example of the clean loading menu feature.
+
 ## How it works
 
 The plugin selects random `.png` or `.dds` images in the `LoadingScreenBackgroundImages` folder to show on the loading screen. For the main menu, the plugin cheacks if there are any `.png` or `.dds` images in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages` folder. If there are images, then it will pick a random `.png` or `.dds` image to show in the background of the main menu. Else, it will check if there are `.wmv` video files in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos` folder. If there is video files, it will pick a random video to play in the background of the main menu. If there are no new files in any folder in `LoadingScreenBackgroundImages`, then the main menu background will act like normal.
 
 ## Plugin Installation
-To use the plugin, please install PluginLoader (https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select Custom Loading Backgrounds. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
+To use the plugin, please install [PluginLoader](https://github.com/austinvaness/PluginLoader). After you install PluginLoader successfully, go to the plugins menu from the main menu and select Custom Loading Backgrounds. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done! Manual Plugin Installation without PluginLoader is not supported!
 
 ## How to add Custom Images to Loading Menu
 
@@ -38,21 +41,28 @@ NOTE: Only `.wmv` files are accepted. Any other files not ending in `.wmv` will 
 NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages` or custom videos will not work.
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\MainMenuScreenBackgroundVideos`.
-2. Paste your images here. File name does not matter; file name must end in `.wmv`.
+2. Paste your images here. File name does not matter; file name must end in `.wmv`. Image resolution does not matter, any images that is not 16:9 aspect ratio will be streched/squashed.
 3. You are done!
 
-## How to Enable Overlays
+## Configuration
 
-With the release of v1.2.0 of Custom Screen Backgrounds, there is now a option to enable or disable overlays in the main menu or loading menu. Instructions on how to do so are listed below:
+There are configuration options for this plugin. Instructions on how to modify the configuration are listed below:
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\Config`
 2. Open `config.xml` with notepad or your preferred text editor.
-![Screenshot (1742)](https://user-images.githubusercontent.com/80211714/136844661-68dd3c9f-701d-4db0-a052-6be29c49a62f.png)
-3. You should see three config entries: `MainMenuOverlay`, `MainMenuOverlay2`, and `LoadingScreenOverlay`. The value of all of them are false by default. Modify these config entries to your peferences. NOTE: Only `true` or `false` values are accepted. `TRUE` or `FALSE` values will not work and may crash the game.
+
+![Screenshot (2315)](https://user-images.githubusercontent.com/80211714/149607321-9bb5b2f2-0eb7-4607-bc17-0eb15f98d306.png)
+
+3. You should see multiple config entries. 
 
 Config entries:
+
+-`Version`: Not to be used by user. Used to update xml file if xml layout is changed in future update.
+
 -`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
+
 -`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
+
 -`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
 
-
+-NEW - v1.3.0 :`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
