@@ -46,23 +46,13 @@ NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBac
 
 ## Configuration
 
-There are configuration options for this plugin. Instructions on how to modify the configuration are listed below:
+There are configuration options for this plugin in the plugins configurations menu in the plugins menu.
 
-1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\Config`
-2. Open `config.xml` with notepad or your preferred text editor.
+-Clean Loading Menu: This enables the cleaner loading menu provided by this plugin when enabled.
 
-![Screenshot (2315)](https://user-images.githubusercontent.com/80211714/149607321-9bb5b2f2-0eb7-4607-bc17-0eb15f98d306.png)
+-Loading Screen Overlay: This overlay shows up in the loading menu when enabled. It is the same overlay as the Main Menu Overlay.
 
-3. You should see multiple config entries. 
+-Main Menu Overlay: This overlay shows up in the main menu when enabled. It is faint lines that go across the screen.
 
-Config entries:
+-Main Menu Overlay 2: This overlay also shows up in the main menu when enabled. It is more visble than Main Menu Overlay. It is blue bordered squares with fading at the edges of the overlay. Overlays over Main Menu Overlay.
 
--`Version`: Not to be used by user. Used to update xml file if xml layout is changed in future update.
-
--`MainMenuOverlay`: This overlay shows up in the main menu when `true`. It is faint lines that go across the screen.
-
--`MainMenuOverlay2`: This overlay also shows up in the main menu when `true`. It is more visble than `MainMenuOverlay`. It is blue bordered squares with fading at the edges of the overlay. Overlays over `MainMenuOverlay`.
-
--`LoadingScreenOverlay`: This overlay shows up in the loading menu when `true`. It is the same overlay as `MainMenuOverlay`.
-
--NEW - v1.3.0 :`CleanLoadingMenu`: This enables the cleaner loading menu provided by this plugin.
