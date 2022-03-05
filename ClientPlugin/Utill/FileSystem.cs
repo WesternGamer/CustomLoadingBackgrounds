@@ -49,7 +49,7 @@ namespace CustomScreenBackgrounds.Utill
                 {
                     DirectoryInfo di = new DirectoryInfo(path);
                     FileInfo[] rgFiles = di.GetFiles("*.*");
-                    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+                    RandomNumberGenerator rng = RandomNumberGenerator.Create();
                     byte[] data = new byte[4];
                     rng.GetBytes(data);
                     int value = BitConverter.ToInt32(data, 0);

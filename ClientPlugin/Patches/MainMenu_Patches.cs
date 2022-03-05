@@ -31,12 +31,12 @@ namespace CustomScreenBackgrounds.Patches
                 }
                 else
                 {
-                    MyGuiSandbox.AddScreen(Image = new BackgroundScreen(FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath)));
+                    MyGuiSandbox.AddScreen(Image = new BackgroundScreen(FileSystem.GetRandomFileFromDir(FileSystem.MainMenuImagesFolderPath)));
                 }
             }
             else
             {
-                MyGuiSandbox.AddScreen(Image = new BackgroundScreen(FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath)));
+                MyGuiSandbox.AddScreen(Image = new BackgroundScreen(FileSystem.GetRandomFileFromDir(FileSystem.MainMenuImagesFolderPath)));
             }
             return false;
         }
