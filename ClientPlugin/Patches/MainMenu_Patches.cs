@@ -1,4 +1,5 @@
-﻿using CustomScreenBackgrounds.Utill;
+﻿using CustomScreenBackgrounds.GUI;
+using CustomScreenBackgrounds.Utill;
 using HarmonyLib;
 using Sandbox.Game.Gui;
 using Sandbox.Graphics.GUI;

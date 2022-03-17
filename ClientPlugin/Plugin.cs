@@ -1,4 +1,4 @@
-﻿using ClientPlugin.GUI;
+﻿using CustomScreenBackgrounds.GUI;
 using CustomScreenBackgrounds.Utill;
 using HarmonyLib;
 using Sandbox.Graphics.GUI;
@@ -11,13 +11,12 @@ using System.IO;
 using System.Reflection;
 using VRage.FileSystem;
 using VRage.Plugins;
-using VRage.Utils;
 
 namespace CustomScreenBackgrounds
 {
     public class Plugin : IPlugin, ICommonPlugin
     {
-        public const string Name = "PluginTemplate";
+        public const string Name = "CustomMenuBackgrounds";
         public static long Tick { get; private set; }
         public static Plugin Instance { get; private set; }
 

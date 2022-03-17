@@ -11,5 +11,9 @@ namespace Shared.Config
         bool LoadingScreenOverlay { get; set; }
 
         bool CleanLoadingMenu { get; set; }
+
+        bool CustomMainMenuOverlay { get; set; }
+
+        bool CustomLoadingMenuOverlay { get; set; }
     }
 }

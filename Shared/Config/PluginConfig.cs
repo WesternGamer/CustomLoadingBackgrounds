@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
-#if !TORCH
 
 namespace Shared.Config
 {
@@ -34,28 +31,43 @@ namespace Shared.Config
         private bool mainMenuOverlay2 = false;
         private bool loadingScreenOverlay = false;
         private bool cleanLoadingMenu = true;
+        private bool customMainMenuOverlay = false;
+        private bool customLoadingMenuOverlay = false;
 
         public bool MainMenuOverlay 
         { 
             get => mainMenuOverlay; 
             set => SetValue(ref mainMenuOverlay, value); 
         }
+
         public bool MainMenuOverlay2 
         { 
             get => mainMenuOverlay2; 
             set => SetValue(ref mainMenuOverlay2, value); 
         }
+
         public bool LoadingScreenOverlay 
         { 
             get => loadingScreenOverlay; 
             set => SetValue(ref loadingScreenOverlay, value); 
         }
+
         public bool CleanLoadingMenu 
         { 
             get => cleanLoadingMenu; 
             set => SetValue(ref cleanLoadingMenu, value); 
         }
+
+        public bool CustomMainMenuOverlay
+        {
+            get => customMainMenuOverlay;
+            set => SetValue(ref customMainMenuOverlay, value);
+        }
+
+        public bool CustomLoadingMenuOverlay
+        {
+            get => customLoadingMenuOverlay;
+            set => SetValue(ref customLoadingMenuOverlay, value);
+        }
     }
 }
-
-#endif

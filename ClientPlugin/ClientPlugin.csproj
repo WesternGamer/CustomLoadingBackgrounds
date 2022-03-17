@@ -546,7 +546,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackgroundScreen.cs" />
+    <Compile Include="GUI\BackgroundScreen.cs" />
     <Compile Include="GUI\MyPluginConfigDialog.cs" />
     <Compile Include="Patches\MainMenu_Patches.cs" />
     <Compile Include="Patches\Patch_LoadingMenu.cs" />

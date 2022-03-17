@@ -3,7 +3,7 @@ using Sandbox.Graphics;
 using Sandbox.Graphics.GUI;
 using VRageMath;
 
-namespace CustomScreenBackgrounds
+namespace CustomScreenBackgrounds.GUI
 {
     internal class BackgroundScreen : MyGuiScreenBase
     {
