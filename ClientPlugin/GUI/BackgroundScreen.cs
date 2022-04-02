@@ -1,4 +1,5 @@
-﻿using Sandbox.Game.Gui;
+﻿using CustomScreenBackgrounds.Utill;
+using Sandbox.Game.Gui;
 using Sandbox.Graphics;
 using Sandbox.Graphics.GUI;
 using VRageMath;
@@ -8,10 +9,13 @@ namespace CustomScreenBackgrounds.GUI
     internal class BackgroundScreen : MyGuiScreenBase
     {
         private readonly string Image;
-
-        public BackgroundScreen(string image)
+        private string CustomImageOverlay;
+        private bool IsCustomImageLoaded = false;
+        
+        public BackgroundScreen(string image, string customOverlay)
         {
             Image = image;
+            CustomImageOverlay = customOverlay;
             DrawMouseCursor = false;
             CanHaveFocus = false;
             m_closeOnEsc = false;
@@ -38,13 +42,20 @@ namespace CustomScreenBackgrounds.GUI
 
             MyGuiManager.GetSafeHeightFullScreenPictureSize(MyGuiConstants.LOADING_BACKGROUND_TEXTURE_REAL_SIZE, out Rectangle destinationRectangle);
             MyGuiManager.DrawSpriteBatch(Image, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
+
             if (Plugin.Instance.Config.MainMenuOverlay)
             {
                 MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\screen_background_fade.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
             }
+
             if (Plugin.Instance.Config.MainMenuOverlay2)
             {
                 MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\main_menu_overlay.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
+            }
+
+            if (Plugin.Instance.Config.CustomMainMenuOverlay)
+            {
+                MyGuiManager.DrawSpriteBatch(CustomImageOverlay, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, m_transitionAlpha)), true, true);
             }
 
             return true;

@@ -14,6 +14,9 @@ namespace CustomScreenBackgrounds.Patches
     [HarmonyPatch(typeof(MyGuiScreenLoading), "DrawInternal")]
     internal class Patch_LoadingMenu
     {
+        private static bool IsImageAleadyLoaded = false;
+        private static string CustomOverlay = "";
+
         private static bool Prefix(float ___m_transitionAlpha, string ___m_customTextFromConstructor,
             MyGuiControlMultilineText ___m_multiTextControl, StringBuilder ___m_authorWithDash, string ___m_backgroundScreenTexture,
             ref MyGuiControlRotatingWheel ___m_wheel)
@@ -28,6 +31,29 @@ namespace CustomScreenBackgrounds.Patches
             {
                 MyGuiManager.DrawSpriteBatch("Textures\\Gui\\Screens\\screen_background_fade.dds", destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
             }
+
+            if (Plugin.Instance.Config.CustomLoadingMenuOverlay && !IsImageAleadyLoaded)
+            {
+                if (Directory.GetFiles(FileSystem.LoadingMenuCustomOverlaysFolderPath, "*.png").Length == 0)
+                {
+                    if (Directory.GetFiles(FileSystem.LoadingMenuCustomOverlaysFolderPath, "*.dds").Length == 0)
+                    {
+                        CustomOverlay = "";
+                    }
+                    else
+                    {
+                        CustomOverlay = FileSystem.GetRandomFileFromDir(FileSystem.LoadingMenuCustomOverlaysFolderPath);
+                        IsImageAleadyLoaded = true;
+                    }
+                }
+                else
+                {
+                    CustomOverlay = FileSystem.GetRandomFileFromDir(FileSystem.LoadingMenuCustomOverlaysFolderPath);
+                    IsImageAleadyLoaded = true;
+                }
+            }
+
+            MyGuiManager.DrawSpriteBatch(CustomOverlay, destinationRectangle, new Color(new Vector4(1f, 1f, 1f, ___m_transitionAlpha)), true, true);
 
             if (Plugin.Instance.Config.CleanLoadingMenu)
             {

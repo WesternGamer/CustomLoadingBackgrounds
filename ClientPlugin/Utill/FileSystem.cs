@@ -11,6 +11,9 @@ namespace CustomScreenBackgrounds.Utill
         public static string RootFolderPath;
         public static string MainMenuImagesFolderPath;
         public static string MainMenuVideosFolderPath;
+        public static string CustomOverlaysFolderPath;
+        public static string MainMenuCustomOverlaysFolderPath;
+        public static string LoadingMenuCustomOverlaysFolderPath;
         public static string ConfigFolderPath;
 
         public static void Init()
@@ -31,6 +34,24 @@ namespace CustomScreenBackgrounds.Utill
             if (!Directory.Exists(MainMenuVideosFolderPath))
             {
                 Directory.CreateDirectory(MainMenuVideosFolderPath);
+            }
+
+            CustomOverlaysFolderPath = Path.Combine(RootFolderPath, "CustomOverlays");
+            if (!Directory.Exists(CustomOverlaysFolderPath))
+            {
+                Directory.CreateDirectory(CustomOverlaysFolderPath);
+            }
+
+            MainMenuCustomOverlaysFolderPath = Path.Combine(CustomOverlaysFolderPath, "MainMenu");
+            if (!Directory.Exists(MainMenuCustomOverlaysFolderPath))
+            {
+                Directory.CreateDirectory(MainMenuCustomOverlaysFolderPath);
+            }
+
+            LoadingMenuCustomOverlaysFolderPath = Path.Combine(CustomOverlaysFolderPath, "LoadingMenu");
+            if (!Directory.Exists(LoadingMenuCustomOverlaysFolderPath))
+            {
+                Directory.CreateDirectory(LoadingMenuCustomOverlaysFolderPath);
             }
 
             ConfigFolderPath = Path.Combine(RootFolderPath, "Config");
