@@ -56,3 +56,7 @@ There are configuration options for this plugin in the plugins configurations me
 
 -Main Menu Overlay 2: This overlay also shows up in the main menu when enabled. It is more visble than Main Menu Overlay. It is blue bordered squares with fading at the edges of the overlay. Overlays over Main Menu Overlay.
 
+-Custom Main Menu Overlay: This overlay shows up in the main menu when enabled and when textures are in the `CustomOverlays\MainMenu` folder.
+
+-Custom Loading Menu Overlay: This overlay shows up in the loading menu when enabled and when textures are in the `CustomOverlays\LoadingMenu` folder.
+
