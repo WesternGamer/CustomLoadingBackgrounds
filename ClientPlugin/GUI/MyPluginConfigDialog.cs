@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
+using CustomScreenBackgrounds.Utill;
 using Sandbox;
 using Sandbox.Graphics.GUI;
 using Shared.Plugin;
@@ -69,8 +71,8 @@ namespace CustomScreenBackgrounds.GUI
             CreateCheckbox(out LoadingScreenOverlayLabel, out LoadingScreenOverlayCheckbox, config.LoadingScreenOverlay, value => config.LoadingScreenOverlay = value, "Loading Screen Overlay", "This overlay shows up in the loading menu when enabled. It is the same overlay as Main Menu Overlay.");
             CreateCheckbox(out MainMenuOverlayLabel, out MainMenuOverlayCheckbox, config.MainMenuOverlay, value => config.MainMenuOverlay = value, "Main Menu Overlay", "This overlay shows up in the main menu when enabled. It is faint lines that go across the screen.");
             CreateCheckbox(out MainMenuOverlay2Label, out MainMenuOverlay2Checkbox, config.MainMenuOverlay2, value => config.MainMenuOverlay2 = value, "Main Menu Overlay 2", "This overlay also shows up in the main menu when enabled. It is more visble than Main Menu Overlay. It is blue bordered squares with fading at the edges of the overlay. Overlays over Main Menu Overlay.");
-            CreateCheckbox(out CustomMainMenuOverlayLabel, out CustomMainMenuOverlayCheckbox, config.CustomMainMenuOverlay, value => config.CustomMainMenuOverlay = value, "Custom Main Menu Overlay", "This overlay shows up in the main menu when enabled and when a texture named 'CustomMainMenuOverlay.dds' or 'CustomMainMenuOverlay.png' is in the CustomOverlays folder.");
-            CreateCheckbox(out CustomLoadingMenuOverlayLabel, out CustomLoadingMenuOverlayCheckbox, config.CustomLoadingMenuOverlay, value => config.CustomLoadingMenuOverlay = value, "Custom Loading Menu Overlay", "This overlay shows up in the loading menu when enabled and when a texture named 'CustomLoadingMenuOverlay.dds' or 'CustomLoadingMenuOverlay.png' is in the CustomOverlays folder.");
+            CreateCheckbox(out CustomMainMenuOverlayLabel, out CustomMainMenuOverlayCheckbox, config.CustomMainMenuOverlay, value => config.CustomMainMenuOverlay = value, "Custom Main Menu Overlay", "This overlay shows up in the main menu when enabled and when textures are in the CustomOverlays\\MainMenu folder.");
+            CreateCheckbox(out CustomLoadingMenuOverlayLabel, out CustomLoadingMenuOverlayCheckbox, config.CustomLoadingMenuOverlay, value => config.CustomLoadingMenuOverlay = value, "Custom Loading Menu Overlay", "This overlay shows up in the loading menu when enabled and when textures are in the CustomOverlays\\LoadingMenu folder.");
 
 
             infoText = new MyGuiControlMultilineText
@@ -83,10 +85,15 @@ namespace CustomScreenBackgrounds.GUI
             };
 
             closeButton = new MyGuiControlButton(originAlign: MyGuiDrawAlignEnum.HORISONTAL_RIGHT_AND_VERTICAL_CENTER, text: MyTexts.Get(MyCommonTexts.Ok), onButtonClick: OnOk);
-            folderButton = new MyGuiControlButton(originAlign: MyGuiDrawAlignEnum.HORISONTAL_RIGHT_AND_VERTICAL_CENTER, text: new StringBuilder("Open Plugin Folder"), onButtonClick: OnOk);
+            folderButton = new MyGuiControlButton(originAlign: MyGuiDrawAlignEnum.HORISONTAL_RIGHT_AND_VERTICAL_CENTER, text: new StringBuilder("Open Plugin Folder"), onButtonClick: OnOpenFolder);
         }
 
         private void OnOk(MyGuiControlButton _) => CloseScreen();
+
+        private void OnOpenFolder(MyGuiControlButton _)
+        {
+            Process.Start("explorer.exe", $"/e, \"{FileSystem.RootFolderPath}\"");
+        }
 
         private void CreateCheckbox(out MyGuiControlLabel labelControl, out MyGuiControlCheckbox checkboxControl, bool value, Action<bool> store, string label, string tooltip)
         {
