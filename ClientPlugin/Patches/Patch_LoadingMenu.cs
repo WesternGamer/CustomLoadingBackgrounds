@@ -61,7 +61,7 @@ namespace CustomScreenBackgrounds.Patches
             }
             else
             {
-                MyGuiSandbox.DrawGameLogoHandler(___m_transitionAlpha, MyGuiManager.ComputeFullscreenGuiCoordinate(MyGuiDrawAlignEnum.HORISONTAL_LEFT_AND_VERTICAL_TOP, 44, 68));
+                MyGuiSandbox.DrawGameLogoHandler(___m_transitionAlpha, MyGuiManager.ComputeFullscreenGuiCoordinate(MyGuiDrawAlignEnum.HORISONTAL_LEFT_AND_VERTICAL_TOP, 44, 68), new Vector2(0.005f, 0.19f));
                 MyGuiManager.DrawString("LoadingScreen", MyTexts.GetString(MyCommonTexts.LoadingPleaseWaitUppercase), MyGuiConstants.LOADING_PLEASE_WAIT_POSITION, MyGuiSandbox.GetDefaultTextScaleWithLanguage() * 1.1f, new Color?(new Color(MyGuiConstants.LOADING_PLEASE_WAIT_COLOR * ___m_transitionAlpha)), MyGuiDrawAlignEnum.HORISONTAL_CENTER_AND_VERTICAL_BOTTOM, false, float.PositiveInfinity, false);
                 if (string.IsNullOrEmpty(___m_customTextFromConstructor))
                 {
