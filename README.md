@@ -20,7 +20,7 @@ To use the plugin, please install [PluginLoader](https://github.com/austinvaness
 
 ## How to add Custom Images to Loading Menu
 
-NOTE: Only `.png` and `.dds` files are accepted. Any other files not ending in `.png` or `.dds` will be ignored. `.PNG` or `.DDS` will not work.
+NOTE: Only `.png`, `.jpg`, and `.dds` files are accepted. Any other files not ending in `.png`, `.jpg`, or `.dds` will be ignored. 
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages`.
 2. Paste your images here. File name does not matter; file name must end in `.png` or `.dds`.
@@ -28,10 +28,10 @@ NOTE: Only `.png` and `.dds` files are accepted. Any other files not ending in `
 
 ## How to add Custom Images to Main Menu
 
-NOTE: Only `.png` and `.dds` files are accepted. Any other files not ending in `.png` or `.dds` will be ignored. `.PNG` or `.DDS` will not work.
+NOTE: Only `.png`, `.jpg`, and `.dds` files are accepted. Any other files not ending in `.png`, `.jpg`, or `.dds` will be ignored.
 
 1. Go to `C:\Users\[Your Username]\AppData\Roaming\SpaceEngineers\LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages`.
-2. Paste your images here. File name does not matter; file name must end in `.png` or `.dds`.
+2. Paste your images here. File name does not matter.
 3. You are done!
 
 ## How to add Custom Videos to Main Menu
@@ -59,4 +59,6 @@ There are configuration options for this plugin in the plugins configurations me
 -Custom Main Menu Overlay: This overlay shows up in the main menu when enabled and when textures are in the `CustomOverlays\MainMenu` folder.
 
 -Custom Loading Menu Overlay: This overlay shows up in the loading menu when enabled and when textures are in the `CustomOverlays\LoadingMenu` folder.
+
+-Show Loading Screen Percent: Disable/enable the world progress percentage indication.
 

@@ -15,5 +15,7 @@ namespace Shared.Config
         bool CustomMainMenuOverlay { get; set; }
 
         bool CustomLoadingMenuOverlay { get; set; }
+
+        bool ShowLoadingMenuPercent { get; set; }
     }
 }

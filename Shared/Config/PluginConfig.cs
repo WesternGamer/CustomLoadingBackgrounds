@@ -33,6 +33,7 @@ namespace Shared.Config
         private bool cleanLoadingMenu = true;
         private bool customMainMenuOverlay = false;
         private bool customLoadingMenuOverlay = false;
+        private bool showloadingScreenPercent = true;
 
         public bool MainMenuOverlay 
         { 
@@ -68,6 +69,11 @@ namespace Shared.Config
         {
             get => customLoadingMenuOverlay;
             set => SetValue(ref customLoadingMenuOverlay, value);
+        }
+        public bool ShowLoadingMenuPercent 
+        { 
+            get => showloadingScreenPercent; 
+            set => SetValue(ref showloadingScreenPercent, value); 
         }
     }
 }

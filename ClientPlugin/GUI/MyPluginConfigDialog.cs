@@ -31,6 +31,8 @@ namespace CustomScreenBackgrounds.GUI
         private MyGuiControlCheckbox CustomMainMenuOverlayCheckbox;
         private MyGuiControlLabel CustomLoadingMenuOverlayLabel;
         private MyGuiControlCheckbox CustomLoadingMenuOverlayCheckbox;
+        private MyGuiControlLabel LoadingMenuPercentLabel;
+        private MyGuiControlCheckbox LoadingMenuPercentCheckbox;
 
         // TODO: Add member variables for your UI controls here
 
@@ -38,7 +40,7 @@ namespace CustomScreenBackgrounds.GUI
         private MyGuiControlButton closeButton;
         private MyGuiControlButton folderButton;
 
-        public MyPluginConfigDialog() : base(new Vector2(0.5f, 0.5f), MyGuiConstants.SCREEN_BACKGROUND_COLOR, new Vector2(0.5f, 0.7f), false, null, MySandboxGame.Config.UIBkOpacity, MySandboxGame.Config.UIOpacity)
+        public MyPluginConfigDialog() : base(new Vector2(0.5f, 0.5f), MyGuiConstants.SCREEN_BACKGROUND_COLOR, new Vector2(0.5f, 0.73f), false, null, MySandboxGame.Config.UIBkOpacity, MySandboxGame.Config.UIOpacity)
         {
             EnabledBackgroundFade = true;
             m_closeOnEsc = true;
@@ -73,6 +75,7 @@ namespace CustomScreenBackgrounds.GUI
             CreateCheckbox(out MainMenuOverlay2Label, out MainMenuOverlay2Checkbox, config.MainMenuOverlay2, value => config.MainMenuOverlay2 = value, "Main Menu Overlay 2", "This overlay also shows up in the main menu when enabled. It is more visble than Main Menu Overlay. It is blue bordered squares with fading at the edges of the overlay. Overlays over Main Menu Overlay.");
             CreateCheckbox(out CustomMainMenuOverlayLabel, out CustomMainMenuOverlayCheckbox, config.CustomMainMenuOverlay, value => config.CustomMainMenuOverlay = value, "Custom Main Menu Overlay", "This overlay shows up in the main menu when enabled and when textures are in the CustomOverlays\\MainMenu folder.");
             CreateCheckbox(out CustomLoadingMenuOverlayLabel, out CustomLoadingMenuOverlayCheckbox, config.CustomLoadingMenuOverlay, value => config.CustomLoadingMenuOverlay = value, "Custom Loading Menu Overlay", "This overlay shows up in the loading menu when enabled and when textures are in the CustomOverlays\\LoadingMenu folder.");
+            CreateCheckbox(out LoadingMenuPercentLabel, out LoadingMenuPercentCheckbox, config.ShowLoadingMenuPercent, value => config.ShowLoadingMenuPercent = value, "Show Loading Menu Progress Percent", "Disable/enable the world progress percentage indication.");
 
 
             infoText = new MyGuiControlMultilineText
@@ -118,7 +121,7 @@ namespace CustomScreenBackgrounds.GUI
             layoutTable = new MyLayoutTable(this, new Vector2(-0.2f, -0.25f), 0.7f * size);
             layoutTable.SetColumnWidths(600f, 200f);
             
-            layoutTable.SetRowHeights(80f, 80f, 80f, 80f, 80f, 80f, 100f, 1f);
+            layoutTable.SetRowHeights(80f, 80f, 80f, 80f, 80f, 80f, 80f, 100f, 1f);
 
             var row = 0;
 
@@ -144,6 +147,10 @@ namespace CustomScreenBackgrounds.GUI
 
             layoutTable.Add(CustomLoadingMenuOverlayLabel, MyAlignH.Left, MyAlignV.Center, row, 0);
             layoutTable.Add(CustomLoadingMenuOverlayCheckbox, MyAlignH.Left, MyAlignV.Center, row, 1);
+            row++;
+
+            layoutTable.Add(LoadingMenuPercentLabel, MyAlignH.Left, MyAlignV.Center, row, 0);
+            layoutTable.Add(LoadingMenuPercentCheckbox, MyAlignH.Left, MyAlignV.Center, row, 1);
             row++;
 
             layoutTable.Add(infoText, MyAlignH.Left, MyAlignV.Top, row, 0, colSpan: 2);
