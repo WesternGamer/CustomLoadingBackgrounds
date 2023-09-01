@@ -36,7 +36,7 @@ NOTE: Only `.png`, `.jpg`, and `.dds` files are accepted. Any other files not en
 
 ## How to add Custom Videos to Main Menu
 
-NOTE: Only `.wmv` files are accepted. Any other files not ending in `.wmv` will be ignored. `.WMV` will not work.
+NOTE: Only `.wmv` files are accepted. Any other files not ending in `.wmv` will be ignored.
 
 NOTE: Remove all image files in `LoadingScreenBackgroundImages\MainMenuScreenBackgroundImages` or custom videos will not work.
 
