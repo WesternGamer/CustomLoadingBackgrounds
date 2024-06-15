@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Shared.Config
+namespace CustomScreenBackgrounds.Config
 {
-    public class PluginConfig : IPluginConfig
+    public class PluginConfig : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

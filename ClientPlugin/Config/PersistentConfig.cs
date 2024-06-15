@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Xml.Serialization;
 using System.IO;
 using System.Threading;
-using Shared.Logging;
+using CustomScreenBackgrounds.Logging;
 
-namespace Shared.Config
+namespace CustomScreenBackgrounds.Config
 {
     // Ported from Torch's Persistent<T> class for compatibility of configuration files between targets and to work with IPluginLogger.
     // Simple class that manages saving <see cref="P:Torch.Persistent`1.Data" /> to disk using XML serialization.
@@ -50,7 +50,7 @@ namespace Shared.Config
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e) => SaveLater();
 
-        public static PersistentConfig<T> Load(IPluginLogger log, string path)
+        public static PersistentConfig<T> Load(PluginLogger log, string path)
         {
             try
             {

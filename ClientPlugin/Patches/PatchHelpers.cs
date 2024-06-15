@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Reflection;
 using HarmonyLib;
-using Shared.Logging;
+using CustomScreenBackgrounds.Logging;
 
-namespace Shared.Patches
+namespace CustomScreenBackgrounds.Patches
 {
     // ReSharper disable once UnusedType.Global
     public static class PatchHelpers
     {
-        public static bool HarmonyPatchAll(IPluginLogger log, Harmony harmony)
+        public static bool HarmonyPatchAll(PluginLogger log, Harmony harmony)
         {
 #if DEBUG
             Harmony.DEBUG = true;

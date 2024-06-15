@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using VRage.FileSystem;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CustomScreenBackgrounds.Utill
 {
@@ -18,8 +17,7 @@ namespace CustomScreenBackgrounds.Utill
         public static string LoadingMenuCustomOverlaysFolderPath;
         public static string ConfigFolderPath;
 
-        private static readonly List<string> imageFileExtensions = new List<string> { "jpg", "jpeg", "dds", "png"};
-
+        private static readonly List<string> allowedImageFileExtensions = new List<string> { "jpg", "jpeg", "dds", "png"};
         public static void Init()
         {
             RootFolderPath = Path.Combine(MyFileSystem.UserDataPath, "LoadingScreenBackgroundImages");
@@ -90,12 +88,12 @@ namespace CustomScreenBackgrounds.Utill
 
         public static IEnumerable<string> GetAllLoadingScreenFiles()
         {
-            return Directory.EnumerateFiles(RootFolderPath, "*.*", SearchOption.TopDirectoryOnly).Where(s => imageFileExtensions.Contains(Path.GetExtension(s).TrimStart('.').ToLowerInvariant()));
+            return Directory.EnumerateFiles(RootFolderPath, "*.*", SearchOption.TopDirectoryOnly).Where(s => allowedImageFileExtensions.Contains(Path.GetExtension(s).TrimStart('.').ToLowerInvariant()));
         }
 
         public static IEnumerable<string> GetAllMainMenuScreenImageFiles()
         {
-            return Directory.EnumerateFiles(MainMenuImagesFolderPath, "*.*", SearchOption.TopDirectoryOnly).Where(s => imageFileExtensions.Contains(Path.GetExtension(s).TrimStart('.').ToLowerInvariant()));
+            return Directory.EnumerateFiles(MainMenuImagesFolderPath, "*.*", SearchOption.TopDirectoryOnly).Where(s => allowedImageFileExtensions.Contains(Path.GetExtension(s).TrimStart('.').ToLowerInvariant()));
         }
 
         public static IEnumerable<string> GetAllMainMenuScreenVideoFiles()

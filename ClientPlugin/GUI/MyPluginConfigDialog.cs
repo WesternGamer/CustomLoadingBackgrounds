@@ -4,14 +4,12 @@ using System.Text;
 using CustomScreenBackgrounds.Utill;
 using Sandbox;
 using Sandbox.Graphics.GUI;
-using Shared.Plugin;
 using VRage;
 using VRage.Utils;
 using VRageMath;
 
 namespace CustomScreenBackgrounds.GUI
 {
-
     public class MyPluginConfigDialog : MyGuiScreenBase
     {
         private const string Caption = "Custom Screen Backgrounds Config";
@@ -68,7 +66,7 @@ namespace CustomScreenBackgrounds.GUI
         {
             AddCaption(Caption);
 
-            var config = Common.Config;
+            var config = Plugin.Instance.Config;
             CreateCheckbox(out CleanLoadingMenuLabel, out CleanLoadingMenuCheckbox, config.CleanLoadingMenu, value => config.CleanLoadingMenu = value, "Clean Loading Menu", " This enables the cleaner loading menu provided by this plugin.");
             CreateCheckbox(out LoadingScreenOverlayLabel, out LoadingScreenOverlayCheckbox, config.LoadingScreenOverlay, value => config.LoadingScreenOverlay = value, "Loading Screen Overlay", "This overlay shows up in the loading menu when enabled. It is the same overlay as Main Menu Overlay.");
             CreateCheckbox(out MainMenuOverlayLabel, out MainMenuOverlayCheckbox, config.MainMenuOverlay, value => config.MainMenuOverlay = value, "Main Menu Overlay", "This overlay shows up in the main menu when enabled. It is faint lines that go across the screen.");
