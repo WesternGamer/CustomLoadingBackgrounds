@@ -93,9 +93,9 @@ namespace CustomScreenBackgrounds.Patches
     {
         private static bool Prefix(ref string __result)
         {
-            if (FileSystem.GetAllMainMenuScreenImageFiles().Count() != 0)
+            if (FileSystem.GetAllLoadingScreenFiles().Count() != 0)
             {
-                __result = FileSystem.GetRandomFileFromDir(FileSystem.MainMenuImagesFolderPath);
+                __result = FileSystem.GetRandomFileFromDir(FileSystem.RootFolderPath);
                 return false;
             }
             return true;
